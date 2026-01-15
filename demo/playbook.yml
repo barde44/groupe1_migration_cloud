@@ -1,0 +1,33 @@
+---
+- name: "Déploiement du site web complet"
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: 1. S'assurer que Nginx est installé
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: 2. Nettoyer le dossier HTML par défaut
+      # On supprime le contenu pour éviter les conflits avec la page par défaut de Debian
+      file:
+        path: /var/www/html/
+        state: absent
+
+    - name: 3. Recréer le dossier de destination propre
+      file:
+        path: /var/www/html/
+        state: directory
+        mode: '0755'
+        owner: www-data
+        group: www-data
+
+    - name: 4. Copier tout le CONTENU du dossier website
+      copy:
+        src: ~/demo1/website/  # / à la fin = copie le contenu (index.html, etc.)
+        dest: /var/www/html/
+        owner: www-data
+        group: www-data
+        mode: '0644'

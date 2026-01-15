@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - JOHNSON Bèni Jeff</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+
+        .cv-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: linear-gradient(to right, #1e40af, #2563eb);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .header-photo {
+            width: 90px;
+            height: 115px;
+            border-radius: 80%;
+            object-fit: cover;
+            border: 3px solid white;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .header .contact {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            padding: 25px 30px;
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 2.5px solid #1e3a8a;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        .section-title-right {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 2.5px solid #1e3a8a;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        .profile-text {
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: #374151;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 12px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+
+        .experience-title {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .experience-date {
+            font-size: 11px;
+            color: #6b7280;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        .experience-company {
+            font-size: 11px;
+            color: #1e40af;
+            margin-bottom: 3px;
+        }
+
+        .experience-desc {
+            font-size: 10.5px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .project-item {
+            font-size: 10.5px;
+            color: #374151;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .project-item strong {
+            color: #1f2937;
+        }
+
+        .formation-item {
+            margin-bottom: 12px;
+        }
+
+        .formation-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 2px;
+        }
+
+        .formation-school {
+            font-size: 10.5px;
+            color: #6b7280;
+            margin-bottom: 1px;
+        }
+
+        .formation-date {
+            font-size: 10px;
+            color: #9ca3af;
+        }
+
+        .skill-group {
+            margin-bottom: 10px;
+        }
+
+        .skill-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 2px;
+        }
+
+        .skill-content {
+            font-size: 9.5px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        .cert-item {
+            font-size: 9.5px;
+            color: #374151;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .lang-item {
+            font-size: 9.5px;
+            color: #374151;
+            margin-bottom: 3px;
+        }
+
+        .lang-item strong {
+            color: #1f2937;
+        }
+
+        .ref-item {
+            margin-bottom: 10px;
+        }
+
+        .ref-name {
+            font-size: 10px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .ref-details {
+            font-size: 9.5px;
+            color: #6b7280;
+            line-height: 1.3;
+        }
+
+        .ref-contact {
+            font-size: 9.5px;
+            color: #1e40af;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                page-break-after: avoid;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <img class="header-photo" src="C:\Users\beni1\Documents\MOI_DOCS\photoJeff.jpg" alt="Photo de profil">
+            <div class="header-content">
+                <h1>JOHNSON Bèni Jeff</h1>
+                <div class="subtitle">Étudiant en Master Informatique et Systèmes </div>
+                <div class="contact">
+                    <div class="contact-item">📍 Sanguera, Lomé - Togo</div>
+                    <div class="contact-item">📞 (+228) 96 51 82 81</div>
+                    <div class="contact-item">✉️ beni.johnson@outlook.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="left-column">
+                <div class="section">
+                    <h2 class="section-title">PROFIL</h2>
+                    <p class="profile-text">
+                        Titulaire d'une Licence en Informatique (Systèmes et Réseaux) et actuellement en Master Informatique et Systèmes (M2) à l'UTBM & Université de Lomé. 
+                        Je combine une expertise en Administration Systèmes & Réseaux avec des compétences en Génie Logiciel et Analyse de Données. 
+                        Je recherche une opportunité pour appliquer et développer mes connaissances dans des projets d'infrastructure sécurisée.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">EXPÉRIENCES PROFESSIONNELLES</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Stagiaire en Administration Systèmes & Réseaux</div>
+                            <div class="experience-date">Sept. - Oct. 2025</div>
+                        </div>
+                        <div class="experience-company">AdKONTACT TOGO</div>
+                        <div class="experience-desc">
+                            Déploiement et configuration de solutions d'accès sécurisé (VPN, gestion des utilisateurs/identités) pour garantir la confidentialité des connexions.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Stagiaire en Intégration de Solutions IT</div>
+                            <div class="experience-date">Juil. - Août 2025</div>
+                        </div>
+                        <div class="experience-company">GNS - TOGO (Global Network Solutions)</div>
+                        <div class="experience-desc">
+                            Intégration et déploiement d'équipements réseau (Cisco, Fortinet, HP)<br>
+                            Support technique aux clients<br>
+                            Participation aux projets d'infrastructure et de sécurité
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Stagiaire en Administration Systèmes & Réseaux</div>
+                            <div class="experience-date">Juin - Déc. 2024</div>
+                        </div>
+                        <div class="experience-company">CAGECFI - TOGO</div>
+                        <div class="experience-desc">
+                            Interconnexion sécurisée de sites et haute disponibilité<br>
+                            Supervision et sécurisation d'infrastructures critiques
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Stagiaire en Génie Logiciel</div>
+                            <div class="experience-date">Juin - Août 2023</div>
+                        </div>
+                        <div class="experience-company">OMS - TOGO</div>
+                        <div class="experience-desc">
+                            Maintenance et évolution d'applications internes<br>
+                            Assistance technique et support aux utilisateurs
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">PROJETS PERTINENTS</h2>
+                    <div class="project-item"><strong>• Analyse Coupe du Monde (2025):</strong> Traitement de données et tableaux de bord interactifs avec Power BI</div>
+                    <div class="project-item"><strong>• Évaluation des dégradations routières (2025):</strong> Système intelligent de reporting</div>
+                    <div class="project-item"><strong>• Détection de genre pour CNI (2025):</strong> Modèle de détection automatique</div>
+                    <div class="project-item"><strong>• Architecture Réseau IAI-TOGO (2024):</strong> Conception d'infrastructure réseau optimisée</div>
+                    <div class="project-item"><strong>• Interconnexion et Haute Disponibilité (2024):</strong> Déploiement multi-sites</div>
+                    <div class="project-item"><strong>• Gestion de parc automobile (2023):</strong> Solution automatisée pour l'OMS</div>
+                    <div class="project-item"><strong>• Simulation Phishing (2023):</strong> Campagne de sensibilisation via SET</div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="section">
+                    <h2 class="section-title-right">FORMATIONS</h2>
+                    <div class="formation-item">
+                        <div class="formation-title">Master Informatique et Systèmes</div>
+                        <div class="formation-school">UTBM & Univ. de Lomé</div>
+                        <div class="formation-date">2024 - Aujourd'hui</div>
+                    </div>
+                    <div class="formation-item">
+                        <div class="formation-title">Licence Informatique</div>
+                        <div class="formation-school">IAI-TOGO</div>
+                        <div class="formation-date">2021 - 2024</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title-right">COMPÉTENCES</h2>
+                    
+                    <div class="skill-group">
+                        <div class="skill-title">Réseaux & Sécurité</div>
+                        <div class="skill-content">VLAN, Routage, VPN, Pare-feu, CARP, Sécurité des systèmes informatiques, Protection des accès, Segmentation</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Systèmes & Cloud</div>
+                        <div class="skill-content">Windows/Windows Server, Linux (Ubuntu, Debian, ...), Virtualisation (VMware, VirtualBox), Migration Cloud, OVHCloud, AWS/Azure</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Programmation</div>
+                        <div class="skill-content">Python, C, HTML/CSS, POO, Génie logiciel</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Data & BI / IA</div>
+                        <div class="skill-content">Power BI, Business Intelligence, Machine Learning, Aide à la décision</div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Outils & Environnements</div>
+                        <div class="skill-content">Packet Tracer, Wireshark, GNS3, Base de donnée (MySQL, PostgreSQL, ...), Git</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title-right">CERTIFICATIONS</h2>
+                    <div class="cert-item">• Développement web - OIF (Avril 2025)</div>
+                    <div class="cert-item">• CCNA 3: Enterprise Networking (en cours)</div>
+                    <div class="cert-item">• Introduction à la cybersécurité (Juin 2024)</div>
+                    <div class="cert-item">• CCNA 2: Switching, Routing (Fév. 2023)</div>
+                    <div class="cert-item">• CCNA 1: Intro to Networks (Juin 2022)</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title-right">LANGUES</h2>
+                    <div class="lang-item"><strong>Français:</strong> Langue officielle</div>
+                    <div class="lang-item"><strong>Anglais:</strong> Courant (TOEIC)</div>
+                    <div class="lang-item"><strong>Ewé:</strong> Langue locale</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title-right">RÉFÉRENCES</h2>
+                    <div class="ref-item">
+                        <div class="ref-name">Dr. TEPE Kossi</div>
+                        <div class="ref-details">Enseignant-Chercheur<br>Univ. de Lomé</div>
+                        <div class="ref-contact">90 05 59 76</div>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-name">M. KUASSI Aimé</div>
+                        <div class="ref-details">IT Manager<br>OMS - Togo</div>
+                        <div class="ref-contact">90 01 27 35</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
