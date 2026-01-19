@@ -53,13 +53,8 @@ Idempotence : Le playbook peut être relancé plusieurs fois ; Ansible ne modifi
 
 Mode Become : Élévation de privilèges (sudo) gérée de manière sécurisée durant l'exécution.
 
-### Équipe du Projet (Groupe 1) : 
-
-ASSIH Esso Mèwè Jacques 
+### Réaliser par : 
 BARDE Steven 
-JOHNSON Bèni Jeff 
-KEGDIGOMA Ditoma 
-IKPAGNATE Kodjo 
-TEPE Paulin 
+
 
 Examinateur : M. WOAGOU
